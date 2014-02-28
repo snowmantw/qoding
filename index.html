@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<script defer src="library/underscore/underscore.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="library/main/template.js" type="text/javascript" charset="utf-8"></script>
+
+<script defer src="library/main/drawer.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="library/main/drawer-new-project.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="library/main/drawer-projects.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="library/main/drawer-teams.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="library/main/drawer-settings.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+<div id="sidebar">
+  <div id="nav">
+    <ul>
+      <li id="newProject"></li>
+      <li id="projects"></li>
+      <li id="teams"></li>
+      <li id="settings"></li>
+    </ul>
+  </div>
+  <div id="drawer">
+  </div>
+</div><!-- #nav -->
+
+<div id="main">
+  <div id="editor">function foo(items) {
+      var x = "All this is syntax highlighted";
+      return x;
+  }</div>
+</div><!-- #main -->
+
+<div id="templates">
+  <div data-template-id="panel-newProject">
+    <!--
+      <div class="panel newProject" id="newProject">
+        <ul id="newProject-types" class="newProject-types">
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+    -->
+  </div>
+</div><!-- templates -->
+
+<script src="library/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+</script>
+</body>
+</html>
